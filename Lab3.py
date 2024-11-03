@@ -9,6 +9,12 @@ def bubble_sort(arr, sorting_order):
     # Copy input list to results list
     arr_result = arr.copy()
 
+    #check for integer
+    try:
+        arr_result = [int(x) for x in arr_result]
+    except ValueError:
+        return 2
+
     # Get number of elements in the list
     n = len(arr_result)
 
@@ -36,7 +42,9 @@ def bubble_sort(arr, sorting_order):
     else:
         arr_result = -1
 
-    return arr_result
+    if n < 10 and n != 0: return arr_result
+    elif n == 0: return 0
+    else: return 1
 
 def main():
     # Driver code to test above
